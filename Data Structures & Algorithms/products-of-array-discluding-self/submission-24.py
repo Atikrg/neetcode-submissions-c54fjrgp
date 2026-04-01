@@ -1,0 +1,12 @@
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        answer = [1] * len(nums)
+        for i in range(len(nums)):
+            product = 1
+            for j in range(len(nums)):
+                if i == j:
+                    continue
+
+                product = product * nums[j]
+            answer[i] = product
+        return answer
